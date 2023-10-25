@@ -12,6 +12,7 @@ public:
 	vector<vector<Box>> grid;
 	vector<string> color;
 
+	Grid(std::string sStr);
 	Grid(int size);
 	~Grid();
 	void Print();
@@ -22,4 +23,6 @@ public:
 	void Defeat(bool& ifDefeat);
 	void Win(bool& win);
 	void SpawnNumber(int& randomNumber);
+
+
 };

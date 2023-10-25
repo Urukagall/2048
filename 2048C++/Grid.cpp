@@ -18,6 +18,29 @@ const string yellow("\033[0;33m");
 const string blue("\033[0;34m");
 const string magenta("\033[0;35m");
 
+Grid::Grid(string sStr)
+{
+	sStr = sStr;
+	//int main() {
+	//	std::string str = "12345";
+	//	int myInt;
+
+	//	try {
+	//		myInt = std::stoi(str);
+	//		std::cout << "La conversion en int a réussi. Résultat : " << myInt << std::endl;
+	//	}
+	//	catch (const std::invalid_argument& e) {
+	//		std::cerr << "Erreur : conversion impossible, valeur non numérique." << std::endl;
+	//	}
+	//	catch (const std::out_of_range& e) {
+	//		std::cerr << "Erreur : dépassement de capacité de l'entier." << std::endl;
+	//	}
+
+	//	return 0;
+	//}
+}
+
+
 Grid::Grid(int size)
 {
 	color = { brightRed,brightGreen,brightYellow,BrightBlue,brightMagenta,brightCyan,red,green,yellow,blue,magenta };
@@ -174,9 +197,6 @@ void Grid::MoveHorizontal(string move) {
 		}
 	}
 
-	PlaceNumber();
-	Print();
-
 }
 
 void Grid::MoveVertical(string move) {
@@ -234,8 +254,7 @@ void Grid::MoveVertical(string move) {
 		}
 	}
 
-	PlaceNumber();
-	Print();
+
 
 }
 
