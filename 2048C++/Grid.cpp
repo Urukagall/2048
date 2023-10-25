@@ -5,8 +5,23 @@
 #include <random>
 using namespace std;
 
+const string reset("\033[0m");
+const string brightRed("\033[0;91m");
+const string brightGreen("\033[0;92m");
+const string brightYellow("\033[0;93m");
+const string BrightBlue("\033[0;94m");
+const string brightMagenta("\033[0;95m");
+const string brightCyan("\033[0;96m");
+const string red("\033[0;31m");
+const string green("\033[0;32m");
+const string yellow("\033[0;33m");
+const string blue("\033[0;34m");
+const string magenta("\033[0;35m");
+
 Grid::Grid(int size)
 {
+	color = { brightRed,brightGreen,brightYellow,BrightBlue,brightMagenta,brightCyan,red,green,yellow,blue,magenta };
+
 	this->size = size;
 	grid = vector<vector<Box>>(size, vector<Box>(size));
 
@@ -27,6 +42,10 @@ void Grid::Print() {
 	cout << endl;
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
+			for (int i = 1; i < color.size()+1; i++)
+			{
+				//A changer pour la couleur
+			}
 			if (grid[i][j].value > 1000) {
 				cout << "  " << grid[i][j].value << " ";
 			}
@@ -34,13 +53,16 @@ void Grid::Print() {
 				cout << "  " << grid[i][j].value << "  ";
 			}
 			else if (grid[i][j].value > 10) {
-				cout << "   " << grid[i][j].value << "  ";
+				cout << "   " << grid[i][j].value << "  " << reset;
+			}
+			else if (grid[i][j].value != 0) {
+				cout << "   " << grid[i][j].value << "   ";
 			}
 			else {
 				cout << "   " << grid[i][j].value << "   ";
 			}
 		}
-		cout << endl;
+		cout << reset << endl;
 		cout << endl;
 	}
 	cout << endl;

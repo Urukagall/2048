@@ -10,6 +10,7 @@ public:
 
 	int size;
 	vector<vector<Box>> grid;
+	vector<string> color;
 
 	Grid(int size);
 	~Grid();
