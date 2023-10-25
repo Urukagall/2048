@@ -21,4 +21,5 @@ public:
 	void Defeat(bool& ifDefeat);
 	void Win(bool& win);
 	void SpawnNumber(int& randomNumber);
+
 };
