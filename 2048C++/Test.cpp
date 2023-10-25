@@ -2,36 +2,27 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <random>
 using namespace std;
 
 Test::Test() 
 {
-	std::string sConfig;
-	sConfig += "0000";
-	sConfig += "0000";
-	sConfig += "0000";
-	sConfig += "0000";
 
-	Grid oGrid(sConfig);
-	//hardcode
-	//"0002"
-
-	std::string sResult;
+	string sConfig ;
+	sConfig += "0200";
 	sConfig += "0000";
 	sConfig += "0000";
 	sConfig += "0000";
-	sConfig += "0000";
+	Grid oGrid(sConfig, 4);
 
+	string sResult;
+	sResult += "2000";
+	sResult += "0000";
+	sResult += "0000";
+	sResult += "0000";
 
-	Grid oGirdResult(4);
-	//hardcode
-	//"2000"
+	oGrid.MoveHorizontal("left");
+	cout << oGrid.CompareTest(sResult);
 
-	oGrid.MoveHorizontal("");
-
-	//compare
-	//créer méthode dans Grid qui compare sResult et oGrid
 }
 
 Test::~Test() {

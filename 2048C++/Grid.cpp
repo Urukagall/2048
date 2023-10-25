@@ -18,26 +18,19 @@ const string yellow("\033[0;33m");
 const string blue("\033[0;34m");
 const string magenta("\033[0;35m");
 
-Grid::Grid(string sStr)
+Grid::Grid(string sStr, int size)
 {
-	sStr = sStr;
-	//int main() {
-	//	std::string str = "12345";
-	//	int myInt;
-
-	//	try {
-	//		myInt = std::stoi(str);
-	//		std::cout << "La conversion en int a réussi. Résultat : " << myInt << std::endl;
-	//	}
-	//	catch (const std::invalid_argument& e) {
-	//		std::cerr << "Erreur : conversion impossible, valeur non numérique." << std::endl;
-	//	}
-	//	catch (const std::out_of_range& e) {
-	//		std::cerr << "Erreur : dépassement de capacité de l'entier." << std::endl;
-	//	}
-
-	//	return 0;
-	//}
+	this->size = size;
+	grid = vector<vector<Box>>(size, vector<Box>(4));
+	int number;
+	string letter;
+	for (size_t i = 0; i < size * size; i++)
+	{
+		grid[i / size][i % size] = Box();
+		letter = sStr[i];
+		number = stoi(letter);
+		grid[i / size][i % size].value = number;
+	}
 }
 
 
@@ -61,7 +54,7 @@ Grid::~Grid()
 
 
 void Grid::Print() {
-	system("cls");
+	/*system("cls");*/
 	cout << endl;
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
@@ -282,4 +275,20 @@ void Grid::Win(bool& win) {
 		}
 	}
 
+}
+
+
+int Grid::CompareTest(string sStr) {
+	int number;
+	string letter;
+	for (size_t i = 0; i < size * size; i++)
+	{
+		letter = sStr[i];
+		number = stoi(letter);
+		if (grid[i / size][i % size].value != number) {
+			return 0;
+		}
+		
+	}
+	return 1;
 }
