@@ -44,7 +44,9 @@ int main()
 		if (GetKeyState(VK_LEFT) & 0x8000) {
 			if (!leftArrowKeyPressed) {
 				leftArrowKeyPressed = true;
-				grid->moveHorizontal("left");
+				grid->MoveHorizontal("left");
+				grid->PlaceNumber();
+				grid->Print();
 			}
 		}
 		else {
@@ -53,7 +55,9 @@ int main()
 		if (GetKeyState(VK_RIGHT) & 0x8000) {
 			if (!rightArrowKeyPressed) {
 				rightArrowKeyPressed = true;
-				grid->moveHorizontal("right");
+				grid->MoveHorizontal("right");
+				grid->PlaceNumber();
+				grid->Print();
 			}
 		}
 		else {
@@ -62,7 +66,9 @@ int main()
 		if (GetKeyState(VK_UP) & 0x8000) {
 			if (!upArrowKeyPressed) {
 				upArrowKeyPressed = true;
-				grid->moveVertical("up");
+				grid->MoveVertical("up");
+				grid->PlaceNumber();
+				grid->Print();
 			}
 		}
 		else {
@@ -71,7 +77,9 @@ int main()
 		if (GetKeyState(VK_DOWN) & 0x8000) {
 			if (!downArrowKeyPressed) {
 				downArrowKeyPressed = true;
-				grid->moveVertical("down");
+				grid->MoveVertical("down");
+				grid->PlaceNumber();
+				grid->Print();
 			}
 		}
 		else {

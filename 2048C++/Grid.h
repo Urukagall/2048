@@ -16,8 +16,8 @@ public:
 	void Print();
 	int PlaceNumber();
 	int GenerateRandomNumber(int randomNumber);
-	void moveHorizontal(string move);
-	void moveVertical(string move);
+	void MoveHorizontal(string move);
+	void MoveVertical(string move);
 	void Defeat(bool& ifDefeat);
 	void Win(bool& win);
 	void SpawnNumber(int& randomNumber);
