@@ -93,7 +93,7 @@ int Grid::PlaceNumber() {
 	return numberZero;
 }
 
-void Grid::moveHorizontal(string move) {
+void Grid::MoveHorizontal(string move) {
 	for (int i = 0; i < size; i++) {
 		vector<int> row;
 
@@ -157,7 +157,7 @@ void Grid::moveHorizontal(string move) {
 
 }
 
-void Grid::moveVertical(string move) {
+void Grid::MoveVertical(string move) {
 	for (int i = 0; i < size; i++) {
 		vector<int> column;
 
