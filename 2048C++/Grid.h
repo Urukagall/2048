@@ -10,7 +10,7 @@ public:
 
 	int size;
 	vector<vector<Box>> grid;
-
+	Grid(std::string sStr);
 	Grid(int size);
 	~Grid();
 	void Print();
@@ -21,5 +21,6 @@ public:
 	void Defeat(bool& ifDefeat);
 	void Win(bool& win);
 	void SpawnNumber(int& randomNumber);
+
 
 };

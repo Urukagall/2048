@@ -5,6 +5,29 @@
 #include <random>
 using namespace std;
 
+Grid::Grid(string sStr)
+{
+	sStr = sStr;
+	//int main() {
+	//	std::string str = "12345";
+	//	int myInt;
+
+	//	try {
+	//		myInt = std::stoi(str);
+	//		std::cout << "La conversion en int a réussi. Résultat : " << myInt << std::endl;
+	//	}
+	//	catch (const std::invalid_argument& e) {
+	//		std::cerr << "Erreur : conversion impossible, valeur non numérique." << std::endl;
+	//	}
+	//	catch (const std::out_of_range& e) {
+	//		std::cerr << "Erreur : dépassement de capacité de l'entier." << std::endl;
+	//	}
+
+	//	return 0;
+	//}
+}
+
+
 Grid::Grid(int size)
 {
 	this->size = size;
