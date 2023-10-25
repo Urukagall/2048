@@ -152,9 +152,6 @@ void Grid::moveHorizontal(string move) {
 		}
 	}
 
-	PlaceNumber();
-	Print();
-
 }
 
 void Grid::moveVertical(string move) {
@@ -212,8 +209,7 @@ void Grid::moveVertical(string move) {
 		}
 	}
 
-	PlaceNumber();
-	Print();
+
 
 }
 
