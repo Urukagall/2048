@@ -11,6 +11,7 @@ public:
 	int size;
 	vector<vector<Box>> grid;
 	vector<string> color;
+	vector<int> numberValue;
 
 	Grid(std::string sStr, int size);
 	Grid(int size);

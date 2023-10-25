@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 #include <random>
+#include <cmath>
 using namespace std;
 
 const string reset("\033[0m");
@@ -58,9 +59,12 @@ void Grid::Print() {
 	cout << endl;
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
-			for (int i = 1; i < color.size()+1; i++)
+			for (int k = 0; k < color.size(); k++)
 			{
-				//A changer pour la couleur
+				if (grid[i][j].value != 0 and grid[i][j].value == pow(2, k))
+				{
+					cout << color[k];
+				}
 			}
 			if (grid[i][j].value > 1000) {
 				cout << "  " << grid[i][j].value << " ";
@@ -69,7 +73,7 @@ void Grid::Print() {
 				cout << "  " << grid[i][j].value << "  ";
 			}
 			else if (grid[i][j].value > 10) {
-				cout << "   " << grid[i][j].value << "  " << reset;
+				cout << "   " << grid[i][j].value << "  ";
 			}
 			else if (grid[i][j].value != 0) {
 				cout << "   " << grid[i][j].value << "   ";
@@ -77,8 +81,9 @@ void Grid::Print() {
 			else {
 				cout << "   " << grid[i][j].value << "   ";
 			}
+			cout << reset;
 		}
-		cout << reset << endl;
+		cout << endl;
 		cout << endl;
 	}
 	cout << endl;
