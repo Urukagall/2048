@@ -7,6 +7,7 @@
 #include "Box.h"
 #include "Grid.h"
 #include "Test.h"
+#include <SDL.h>
 using namespace std;
 
 
@@ -17,8 +18,48 @@ void InputSize(int& size) {
 
 
 
-int main()
+int main(int argc, char* argv[])
 {
+
+	if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+		std::cerr << "Erreur lors de l'initialisation de SDL : " << SDL_GetError() << std::endl;
+		return 1;
+	}
+
+	SDL_Window* window = SDL_CreateWindow("Cube Rouge", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_SHOWN);
+	if (window == nullptr) {
+		std::cerr << "Erreur lors de la création de la fenêtre : " << SDL_GetError() << std::endl;
+		SDL_Quit();
+		return 1;
+	}
+
+	SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	if (renderer == nullptr) {
+		std::cerr << "Erreur lors de la création du renderer : " << SDL_GetError() << std::endl;
+		SDL_DestroyWindow(window);
+		SDL_Quit();
+		return 1;
+	}
+
+	// Dessiner un cube rouge
+	SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
+	SDL_Rect rect = { 100, 100, 200, 200 };
+	SDL_RenderFillRect(renderer, &rect);
+	SDL_RenderPresent(renderer);
+
+	bool quit = false;
+	SDL_Event event;
+	while (!quit) {
+		while (SDL_PollEvent(&event)) {
+			if (event.type == SDL_QUIT) {
+				quit = true;
+			}
+		}
+	}
+
+	SDL_DestroyRenderer(renderer);
+	SDL_DestroyWindow(window);
+	SDL_Quit();
 
 	int size = 0;
 
