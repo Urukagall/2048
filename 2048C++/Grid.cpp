@@ -55,7 +55,7 @@ Grid::~Grid()
 
 
 void Grid::Print() {
-	/*system("cls");*/
+	system("cls");
 	cout << endl;
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
@@ -283,7 +283,7 @@ void Grid::Win(bool& win) {
 }
 
 
-int Grid::CompareTest(string sStr) {
+bool Grid::CompareTest(string sStr) {
 	int number;
 	string letter;
 	for (size_t i = 0; i < size * size; i++)
@@ -291,9 +291,9 @@ int Grid::CompareTest(string sStr) {
 		letter = sStr[i];
 		number = stoi(letter);
 		if (grid[i / size][i % size].value != number) {
-			return 0;
+			return false;
 		}
 		
 	}
-	return 1;
+	return true;
 }

@@ -24,7 +24,7 @@ public:
 	void Defeat(bool& ifDefeat);
 	void Win(bool& win);
 	void SpawnNumber(int& randomNumber);
-	int CompareTest(string sStr);
+	bool CompareTest(string sStr);
 
 
 };
