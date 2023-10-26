@@ -55,7 +55,7 @@ Grid::~Grid()
 
 
 void Grid::Print() {
-	/*system("cls");*/
+	system("cls");
 	cout << endl;
 	for (int i = 0; i < size; i++) {
 		for (int j = 0; j < size; j++) {
@@ -67,21 +67,26 @@ void Grid::Print() {
 				}
 			}
 			if (grid[i][j].value > 1000) {
-				cout << "  " << grid[i][j].value << " ";
+				cout << "[ " << grid[i][j].value << "]";
 			}
 			else if (grid[i][j].value > 100) {
-				cout << "  " << grid[i][j].value << "  ";
+				cout << "[ " << grid[i][j].value << " ]";
 			}
 			else if (grid[i][j].value > 10) {
-				cout << "   " << grid[i][j].value << "  ";
+				cout << "[  " << grid[i][j].value << " ]";
 			}
 			else if (grid[i][j].value != 0) {
-				cout << "   " << grid[i][j].value << "   ";
+				cout << "[  " << grid[i][j].value << "  ]";
 			}
 			else {
-				cout << "   " << grid[i][j].value << "   ";
+				cout << "[  " << grid[i][j].value << "  ]";
 			}
 			cout << reset;
+		}
+		cout << endl;
+		for (int i = 0; i < size; i++)
+		{
+			cout << "_______";
 		}
 		cout << endl;
 		cout << endl;
