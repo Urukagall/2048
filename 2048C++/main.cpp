@@ -22,7 +22,7 @@ int main()
 
 	int size = 0;
 
-	Test* gridTest = new Test();
+	//Test* gridTest = new Test();
 
 	bool defeat = false;
 	bool win = false;
