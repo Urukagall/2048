@@ -4,25 +4,32 @@
 #include <string>
 using namespace std;
 
+//Constructor
 Test::Test() 
 {
 	/*  Test sur les déplacements  */
 
 	//Test du déplacement à gauche
+
+	//Création d'une "grille" initiale avec des strings
 	string sConfig;
 	sConfig += "0200";
 	sConfig += "4000";
 	sConfig += "0040";
 	sConfig += "0002";
+	//Création de la grille en la transformant en vrai tableau de type int
 	Grid oGrid(sConfig, 4);
 
+	//Création d'une "grille" resulat avec des strings
 	string sResult;
 	sResult += "2000";
 	sResult += "4000";
 	sResult += "4000";
 	sResult += "2000";
 
+	//Mise enn place de l'action voulue
 	oGrid.MoveHorizontal("left");
+	//Comparaison des deux grilles et affichage de l
 	cout << "Test d'un deplacement a gauche : " << oGrid.CompareTest(sResult) << endl;
 
 	//Test du déplacement à droite
